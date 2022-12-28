@@ -1,0 +1,20 @@
+FUNCTION Insertion(arr) : ARRAY_OF INTEGER[length];
+VAR
+   j:INTEGER;
+   temp:INTEGER;
+   currentIndex:INTEGER;
+
+BEGIN
+  FOR i FROM 1 TO length-1 DO
+  currentIndex:=i;
+  j:=i-1;
+  WHILE (currentIndex < arr[j]) DO
+    temp:=arr[j];
+    arr[j]:=arr[currentIndex];
+    arr[currentIndex]=temp;
+     currentIndex=arr[i-1];
+    j=j-1;
+  END_WHILE
+  END_FOR
+    RETURN arr;
+END
